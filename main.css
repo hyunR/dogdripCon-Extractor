@@ -42,5 +42,11 @@ input[type="text"]
     text-align: left;
 }
 .img-fields div {
-    margin-top: 5px;
+    margin-top: 7px;
+}
+
+@media only screen and (min-width: 1400px) {
+    .img-fields {
+        margin-left: 22%;
+    }
 }
