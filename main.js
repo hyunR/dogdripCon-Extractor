@@ -3,7 +3,7 @@ const dogdrip_url = "https://www.dogdrip.net"
 
 const img_field = document.querySelector(".img-fields");
 const con_name = document
-let link_index = 0;
+let link_index = 1;
 function get_con_list(html_object) {
     
 
@@ -17,7 +17,7 @@ function get_con_list(html_object) {
 }
 
 function get_button_clicked(){
-    link_index = 0;
+    link_index = 1;
     img_field.innerHTML = ''
     let given_url = document.querySelector("input").value;
     dukboong(given_url)
