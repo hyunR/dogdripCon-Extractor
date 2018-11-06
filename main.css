@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+}
+
+.grid-wrpper {
+    display: grid;
+    grid-template-rows: 1fr 1fr 12fr;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas: 
+    "header header header"
+    ". url-input ."
+    ". img-fields .";
+    height: 100vh;
+    width: 100%;
+}
+
+.header {
+    grid-area: header;
+    font-size: 40px;
+    background-color: #2e4361;
+    color:white;
+    text-align: center;
+    
+}
+
+.url-input {
+    grid-area: url-input;
+}
+.input-wrapper {
+    text-align: center;
+    margin-top: 2%;
+    
+}
+input[type="text"]
+{
+    font-size:15px;
+}
+
+.img-fields {
+    font-family: 'Roboto Condensed', sans-serif;
+    grid-area: img-fields;
+    text-align: left;
+}
+.img-fields div {
+    margin-top: 5px;
+}
