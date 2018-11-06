@@ -2,6 +2,7 @@ const cors_api_url = 'https://cors-anywhere.herokuapp.com/';
 const dogdrip_url = "https://www.dogdrip.net" 
 
 const img_field = document.querySelector(".img-fields");
+const con_name = document
 let link_index = 0;
 function get_con_list(html_object) {
     
@@ -11,7 +12,7 @@ function get_con_list(html_object) {
     for (let index = 0; index < conList.length; index++) {
         let imgUrl = conList[index].getAttribute('style').slice(23,-2);
         add_imgs(imgUrl);
-        console.log(dogdrip_url + imgUrl);
+        // console.log(dogdrip_url + imgUrl);
     }
 }
 
@@ -34,6 +35,14 @@ function add_imgs(img_url){
     link_index++;
 }
 
+function addConName(name){
+    const name_node = document.createTextNode(name);
+    const name_div = document.createElement('div');
+    name_div.className = "con-name";
+    name_div.appendChild(name_node);
+    img_field.appendChild(name_div);
+}
+
 function dukboong(given_url) {
     $.ajax({
         url: cors_api_url + given_url,
@@ -41,7 +50,11 @@ function dukboong(given_url) {
         success: function(data){
             const parser = new DOMParser();
             const doc = parser.parseFromString(data,"text/html")
-            get_con_list(doc) 
+            const con_name = doc.querySelector('.np_18px').textContent.replace(/^\s+|\s+$/g, '');
+            addConName(con_name);
+            get_con_list(doc);
+            
+            
         }
     })
 }

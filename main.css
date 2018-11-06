@@ -41,6 +41,9 @@ input[type="text"]
     grid-area: img-fields;
     text-align: left;
 }
+.con-name{
+    font-size: 30px;
+}
 .img-fields div {
     margin-top: 7px;
 }
